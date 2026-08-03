@@ -1,41 +1,53 @@
-document.getElementById("game").innerHTML = `
-<h1>🃏 Teen Patti</h1>
-
-<p>Welcome to Teen Patti Game</p>
-
-<button onclick="startGame()">Start Game</button>
-
-<div id="result" style="margin-top:20px;font-size:24px;"></div>
-`;
-
-function startGame() {
-
 const suits = ["♠","♥","♦","♣"];
 const values = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
 
-let deck = [];
+function createDeck(){
+    let deck = [];
 
-for (let suit of suits) {
-  for (let value of values) {
-    deck.push(value + suit);
-  }
+    for(let suit of suits){
+        for(let value of values){
+            deck.push({
+                value:value,
+                suit:suit
+            });
+        }
+    }
+
+    return deck.sort(() => Math.random() - 0.5);
 }
 
-deck.sort(() => Math.random() - 0.5);
+function cardHTML(card){
 
-window.player = deck.slice(0,3);
-window.computer = deck.slice(3,6);
+    let color =
+    (card.suit=="♥" || card.suit=="♦")
+    ? "red"
+    : "black";
 
-document.getElementById("result").innerHTML =
-"<h2>Your Cards</h2>" +
-window.player.join(" ") +
-"<br><br>" +
-"<button onclick='showComputer()'>Show Result</button>";
-function showComputer() {
-  document.getElementById("result").innerHTML +=
-    "<br><h2>Computer Cards</h2>" +
-    window.computer.join(" ");
+    return `
+    <div class="card ${color}">
+        ${card.value}${card.suit}
+    </div>`;
 }
-window.computerCards = computer;
 
+function startGame(){
+
+    let deck = createDeck();
+
+    let player = deck.slice(0,3);
+    let computer = deck.slice(3,6);
+
+    let html = `
+        <h2>Your Cards</h2>
+
+        <div class="cards">
+            ${player.map(cardHTML).join("")}
+        </div>
+
+        <button onclick="showWinner()">Show Winner</button>
+    `;
+
+    document.getElementById("result").innerHTML = html;
+
+    window.playerCards = player;
+    window.computerCards = computer;
 }
