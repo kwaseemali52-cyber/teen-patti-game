@@ -206,20 +206,7 @@ function pack(){
     alert("❌ You Packed!");
     location.reload();
 }
-function blind() {
-    alert("🙈 Blind Chaal Played!");
-}
 
-function seen() {
-    alert("👁 Cards Seen!");
-}
-
-function chaal() {
-    currentBet += 50;
-    alert("💰 Chaal: " + currentBet);
-}
-
-function pack() {
     alert("❌ You Packed!");
     startGame();
 }
