@@ -143,3 +143,20 @@ function showWinner(){
 
     `;
 }
+function blind(){
+    alert("🙈 Blind Chaal Played");
+}
+
+function seen(){
+    alert("👁 Cards Seen");
+}
+
+function chaal(){
+    currentBet += 100;
+    alert("💰 Bet is now " + currentBet);
+}
+
+function pack(){
+    alert("❌ You Packed!");
+    location.reload();
+}
