@@ -1,6 +1,4 @@
 let chips = 1000;
-let currentBet = 50;
-let chips = 1000;
 let currentBet = 100;
 const suits = ["♠","♥","♦","♣"];
 const values = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
