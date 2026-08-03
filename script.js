@@ -33,9 +33,8 @@ function cardHTML(card){
     </div>`;
 }
 
-function startGame(document.getElementById("controls").style.display = "block";){document.getElementById("chips").innerHTML =
-"💰 Chips: " + chips;
-
+function startGame(){
+document.getElementById("dealSound").play();
     let deck = createDeck();
 
     let player = deck.slice(0,3);
