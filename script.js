@@ -1,3 +1,5 @@
+let chips = 1000;
+let currentBet = 100;
 const suits = ["♠","♥","♦","♣"];
 const values = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
 
@@ -50,4 +52,59 @@ function startGame(){
 
     window.playerCards = player;
     window.computerCards = computer;
+}
+function cardScore(card){
+
+    const score = {
+        "2":2,
+        "3":3,
+        "4":4,
+        "5":5,
+        "6":6,
+        "7":7,
+        "8":8,
+        "9":9,
+        "10":10,
+        "J":11,
+        "Q":12,
+        "K":13,
+        "A":14
+    };
+
+    return score[card.value];
+}
+
+function totalScore(cards){
+    return cards.reduce((sum, card) => sum + cardScore(card), 0);
+}
+
+function showWinner(){
+
+    let playerScore = totalScore(window.playerCards);
+    let computerScore = totalScore(window.computerCards);
+
+    let winner = "";
+
+    if(playerScore > computerScore){
+        winner = "🎉 You Win!";
+    }else if(playerScore < computerScore){
+        winner = "🤖 Computer Wins!";
+    }else{
+        winner = "🤝 Draw!";
+    }
+
+    document.getElementById("result").innerHTML += `
+
+        <h2>Computer Cards</h2>
+
+        <div class="cards">
+            ${window.computerCards.map(cardHTML).join("")}
+        </div>
+
+        <h2>${winner}</h2>
+
+        <p>Your Score: ${playerScore}</p>
+        <p>Computer Score: ${computerScore}</p>
+
+    `;
 }
