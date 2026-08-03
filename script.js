@@ -45,8 +45,7 @@ function startGame(document.getElementById("controls").style.display = "block";)
         <h2>Your Cards</h2>
 
         <div class="cards">
-            ${player.map(cardHTML).join("")}
-        </div>
+            player.map(card => `<div class="card">${card}</div>`).join("")
 
         <button onclick="showWinner()">Show Winner</button>
     `;
