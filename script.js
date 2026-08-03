@@ -105,8 +105,8 @@ function totalScore(cards){
 
 function showWinner(){
 
-    let playerScore = totalScore(window.playerCards);
-    let computerScore = totalScore(window.computerCards);
+    let playerScore = handRank(window.playerCards);
+let computerScore = handRank(window.computerCards);
 
     let winner = "";
 
@@ -121,7 +121,16 @@ function showWinner(){
     else{
         winner = "🤝 Draw!";
     }
-
+function handName(score){
+    switch(score){
+        case 6: return "🔥 Trail";
+        case 5: return "✨ Pure Sequence";
+        case 4: return "🎯 Sequence";
+        case 3: return "🎨 Color";
+        case 2: return "👥 Pair";
+        default: return "🃏 High Card";
+    }
+}
     document.getElementById("chips").innerHTML =
         "💰 Chips: " + chips;
 
@@ -163,7 +172,8 @@ function showWinner(){
 
         <p>Your Score: ${playerScore}</p>
         <p>Computer Score: ${computerScore}</p>
-
+"<p>Your Hand: " + handName(playerScore) + "</p>" +
+"<p>Computer Hand: " + handName(computerScore) + "</p>" +
     `;
 }
 function blind(){
