@@ -129,3 +129,34 @@ button:hover{
     color:#FFD700;
     margin-top:15px;
 }
+.card{
+    animation:deal .5s ease;
+}
+
+@keyframes deal{
+    from{
+        transform:translateY(-150px) rotate(-20deg);
+        opacity:0;
+    }
+    to{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+}
+
+button:active{
+    transform:scale(0.95);
+}
+
+#result{
+    animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
