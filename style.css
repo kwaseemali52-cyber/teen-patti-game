@@ -54,3 +54,24 @@ button:hover{
     margin-top:20px;
     margin-bottom:20px;
 }
+.card{
+    width:70px;
+    height:100px;
+    background:white;
+    color:black;
+    border-radius:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,.4);
+}
+
+.red{
+    color:red;
+}
+
+.black{
+    color:black;
+}
