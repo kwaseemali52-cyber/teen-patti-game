@@ -23,18 +23,18 @@ for (let suit of suits) {
 
 deck.sort(() => Math.random() - 0.5);
 
-let player = deck.slice(0,3);
-let computer = deck.slice(3,6);
+window.player = deck.slice(0,3);
+window.computer = deck.slice(3,6);
 
 document.getElementById("result").innerHTML =
 "<h2>Your Cards</h2>" +
-player.join(" ") +
+window.player.join(" ") +
 "<br><br>" +
 "<button onclick='showComputer()'>Show Result</button>";
 function showComputer() {
   document.getElementById("result").innerHTML +=
     "<br><h2>Computer Cards</h2>" +
-    computer.join(" ");
+    window.computer.join(" ");
 }
 window.computerCards = computer;
 
