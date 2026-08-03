@@ -52,7 +52,24 @@ function startGame(){
     window.computerCards = computer;
 }
 function cardScore(card){
-function handRank(cards){
+    const score = {
+        "2":2,
+        "3":3,
+        "4":4,
+        "5":5,
+        "6":6,
+        "7":7,
+        "8":8,
+        "9":9,
+        "10":10,
+        "J":11,
+        "Q":12,
+        "K":13,
+        "A":14
+    };
+
+    return score[card.value];
+}
 
     let values = cards.map(cardScore).sort((a,b)=>a-b);
 
