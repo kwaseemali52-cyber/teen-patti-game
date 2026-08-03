@@ -75,3 +75,38 @@ button:hover{
 .black{
     color:black;
 }
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin:20px 0;
+}
+
+.card{
+    width:80px;
+    height:110px;
+    background:#fff;
+    color:#000;
+    border-radius:10px;
+    border:2px solid #ffd700;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    font-weight:bold;
+    box-shadow:0 0 15px gold;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:scale(1.1) rotate(5deg);
+}
+
+button{
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px gold;
+}
