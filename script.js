@@ -34,7 +34,6 @@ function cardHTML(card){
 }
 
 function startGame(){
-document.getElementById("dealSound").play();
     let deck = createDeck();
 
     let player = deck.slice(0,3);
