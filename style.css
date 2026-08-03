@@ -1,59 +1,51 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Helvetica,sans-serif;
-}
-
 body{
-    background:linear-gradient(180deg,#0b5d2a,#06391a);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:#fff;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#14532d;
+    color:white;
+    text-align:center;
 }
 
 .container{
-    width:95%;
     max-width:420px;
-    background:#14532d;
+    margin:30px auto;
+    padding:20px;
+    background:#1b5e20;
     border-radius:20px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    box-shadow:0 0 25px rgba(0,0,0,.5);
 }
 
 h1{
-    color:#ffd54f;
+    color:#ffd700;
     font-size:42px;
-    margin-bottom:15px;
+}
+
+h3{
+    color:#ffd700;
 }
 
 button{
-    width:100%;
-    margin-top:15px;
-    padding:15px;
+    background:#ffd700;
+    color:black;
     border:none;
     border-radius:12px;
-    background:#FFD54F;
-    color:#111;
-    font-size:22px;
-    font-weight:bold;
+    padding:15px 30px;
+    font-size:20px;
+    margin:10px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#ffca28;
+    background:#ffea00;
 }
 
 .cards{
     display:flex;
     justify-content:center;
-    gap:12px;
-    margin-top:20px;
-    margin-bottom:20px;
+    gap:10px;
+    margin:20px 0;
 }
+
 .card{
     width:70px;
     height:100px;
@@ -61,52 +53,12 @@ button:hover{
     color:black;
     border-radius:10px;
     display:flex;
-    justify-content:center;
     align-items:center;
-    font-size:28px;
-    font-weight:bold;
-    box-shadow:0 5px 15px rgba(0,0,0,.4);
-}
-
-.red{
-    color:red;
-}
-
-.black{
-    color:black;
-}
-.cards{
-    display:flex;
     justify-content:center;
-    gap:15px;
-    margin:20px 0;
-}
-
-.card{
-    width:80px;
-    height:110px;
-    background:#fff;
-    color:#000;
-    border-radius:10px;
-    border:2px solid #ffd700;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:32px;
+    font-size:30px;
     font-weight:bold;
-    box-shadow:0 0 15px gold;
-    transition:0.4s;
 }
 
-.card:hover{
-    transform:scale(1.1) rotate(5deg);
-}
-
-button{
-    transition:.3s;
-}
-
-button:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 20px gold;
+#chips{
+    color:#ffd700;
 }
