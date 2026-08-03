@@ -31,7 +31,8 @@ function cardHTML(card){
     </div>`;
 }
 
-function startGame(){
+function startGame(){document.getElementById("chips").innerHTML =
+"💰 Chips: " + chips;
 
     let deck = createDeck();
 
@@ -79,6 +80,40 @@ function totalScore(cards){
 }
 
 function showWinner(){
+
+    let playerScore = totalScore(window.playerCards);
+    let computerScore = totalScore(window.computerCards);
+
+    let winner = "";
+
+    if(playerScore > computerScore){
+        winner = "🎉 You Win!";
+        chips += currentBet;
+    }
+    else if(playerScore < computerScore){
+        winner = "🤖 Computer Wins!";
+        chips -= currentBet;
+    }
+    else{
+        winner = "🤝 Draw!";
+    }
+
+    document.getElementById("chips").innerHTML =
+        "💰 Chips: " + chips;
+
+    document.getElementById("result").innerHTML += `
+        <h2>Computer Cards</h2>
+
+        <div class="cards">
+            ${window.computerCards.map(cardHTML).join("")}
+        </div>
+
+        <h2>${winner}</h2>
+
+        <p>Your Score: ${playerScore}</p>
+        <p>Computer Score: ${computerScore}</p>
+    `;
+}
 
     let playerScore = totalScore(window.playerCards);
     let computerScore = totalScore(window.computerCards);
