@@ -56,7 +56,30 @@ function startGame(document.getElementById("controls").style.display = "block";)
     window.computerCards = computer;
 }
 function cardScore(card){
+function handRank(cards){
 
+    let values = cards.map(cardScore).sort((a,b)=>a-b);
+
+    let suits = cards.map(c=>c.slice(-1));
+
+    let flush = suits.every(s=>s===suits[0]);
+
+    let sequence =
+        values[1]===values[0]+1 &&
+        values[2]===values[1]+1;
+
+    let counts = {};
+    values.forEach(v=>counts[v]=(counts[v]||0)+1);
+
+    let freq = Object.values(counts);
+
+    if(freq.includes(3)) return 6;        // Trail
+    if(sequence && flush) return 5;       // Pure Sequence
+    if(sequence) return 4;                // Sequence
+    if(flush) return 3;                   // Color
+    if(freq.includes(2)) return 2;        // Pair
+    return 1;                             // High Card
+}
     const score = {
         "2":2,
         "3":3,
