@@ -106,8 +106,7 @@ function showWinner(){
         <h2>Computer Cards</h2>
 
         <div class="cards">
-            ${window.computerCards.map(cardHTML).join("")}
-        </div>
+            computer.map(card => `<div class="card">${card}</div>`).join("")
 
         <h2>${winner}</h2>
 
