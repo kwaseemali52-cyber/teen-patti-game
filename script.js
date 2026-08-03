@@ -1,4 +1,6 @@
 let chips = 1000;
+let currentBet = 50;
+let chips = 1000;
 let currentBet = 100;
 const suits = ["♠","♥","♦","♣"];
 const values = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
@@ -31,7 +33,7 @@ function cardHTML(card){
     </div>`;
 }
 
-function startGame(){document.getElementById("chips").innerHTML =
+function startGame(document.getElementById("controls").style.display = "block";){document.getElementById("chips").innerHTML =
 "💰 Chips: " + chips;
 
     let deck = createDeck();
@@ -159,4 +161,21 @@ function chaal(){
 function pack(){
     alert("❌ You Packed!");
     location.reload();
+}
+function blind() {
+    alert("🙈 Blind Chaal Played!");
+}
+
+function seen() {
+    alert("👁 Cards Seen!");
+}
+
+function chaal() {
+    currentBet += 50;
+    alert("💰 Chaal: " + currentBet);
+}
+
+function pack() {
+    alert("❌ You Packed!");
+    startGame();
 }
