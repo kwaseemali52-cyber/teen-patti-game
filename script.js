@@ -9,12 +9,33 @@ document.getElementById("game").innerHTML = `
 `;
 
 function startGame() {
-  const cards = ["🂡","🂮","🂱","🃁","🃎","🃑","🂻","🂫","🂽"];
-  let player = [];
-  for(let i=0;i<3;i++){
-    player.push(cards[Math.floor(Math.random()*cards.length)]);
-  }
 
-  document.getElementById("result").innerHTML =
-  "<h2>Your Cards</h2>" + player.join(" ");
+const suits = ["♠","♥","♦","♣"];
+const values = ["A","K","Q","J","10","9","8","7","6","5","4","3","2"];
+
+let deck = [];
+
+for (let suit of suits) {
+  for (let value of values) {
+    deck.push(value + suit);
+  }
+}
+
+deck.sort(() => Math.random() - 0.5);
+
+let player = deck.slice(0,3);
+let computer = deck.slice(3,6);
+
+document.getElementById("result").innerHTML =
+"<h2>Your Cards</h2>" +
+player.join(" ") +
+"<br><br>" +
+"<button onclick='showComputer()'>Show Result</button>";
+function showComputer() {
+  document.getElementById("result").innerHTML +=
+    "<br><h2>Computer Cards</h2>" +
+    computer.join(" ");
+}
+window.computerCards = computer;
+
 }
